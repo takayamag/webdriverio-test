@@ -19,6 +19,8 @@ jobs:
         run: sw_vers
       - name: Show Xcode version
         run: xcodebuild -version
+      - name: Show devices
+        run: xcrun instruments -s devices
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
