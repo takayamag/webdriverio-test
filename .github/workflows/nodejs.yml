@@ -30,13 +30,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Run safari driver
-        run: |
-          sudo safaridriver --enable
-          safaridriver -p 0 &
       - name: npm install, build, and test
         run: |
+          defaults write com.apple.Safari IncludeDevelopMenu YES
+          defaults write com.apple.Safari AllowRemoteAutomation 1
+          sudo safaridriver --enable
+          safaridriver -p 0 &
           npm install
+          npm build
           npm run test
         env:
           destination: ${{ matrix.destination }}
