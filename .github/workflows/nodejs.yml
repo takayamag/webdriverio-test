@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        destination: ['platform=iOS Simulator,OS=13.2,name=iPad (7th generation)']
+        destination: ['platform=iOS Simulator,OS=13.1,name=iPad Air (3rd generation)']
         xcode: ['/Applications/Xcode_11.1.app/Contents/Developer']
         node-version: [12.x]
 
@@ -28,8 +28,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install, build, and test
         run: |
-          npm ci
           npm install
           npm run test
         env:
-          CI: true
+          destination: ${{ matrix.destination }}
