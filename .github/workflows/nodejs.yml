@@ -30,6 +30,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Run safari driver
+        run: |
+          sudo safaridriver --enable
+          safaridriver -p 0 &
       - name: npm install, build, and test
         run: |
           npm install
