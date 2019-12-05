@@ -57,6 +57,7 @@ exports.config = {
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
         platformName: 'ios',
+        'safari:useSimulator': true
     }],
     //
     // ===================
