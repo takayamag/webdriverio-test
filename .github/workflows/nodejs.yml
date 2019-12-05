@@ -24,7 +24,9 @@ jobs:
       - name: Show simctl list
         run: xcrun simctl list
       - name: Launch simulator
-        run: xcrun simctl boot D368CE6D-AE01-456F-A75E-B5432501A263
+        run: |
+          xcrun simctl boot D368CE6D-AE01-456F-A75E-B5432501A263
+          open '/Applications/Xcode_11.1.app/Contents/Developer/Applications/Simulator.app/'
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
