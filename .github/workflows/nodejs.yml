@@ -17,6 +17,8 @@ jobs:
       # Show env
       - name: Show macOS version
         run: sw_vers
+      - name: Show Xcode version
+        run: xcodebuild -version
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
