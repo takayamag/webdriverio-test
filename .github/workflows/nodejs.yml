@@ -21,6 +21,8 @@ jobs:
         run: xcodebuild -version
       - name: Show devices
         run: xcrun instruments -s devices
+      - name: Show simctl list
+        run: xcrun simctl list
       - name: Launch simulator
         run: xcrun instruments -w 'iPad Air (3rd generation) (13.1) [D368CE6D-AE01-456F-A75E-B5432501A263] (Simulator)'
       - uses: actions/checkout@v1
